@@ -15,6 +15,7 @@
 package org.hyperledger.besu.ethereum.api.jsonrpc.internal.results;
 
 import org.hyperledger.besu.datatypes.AccessListEntry;
+import org.hyperledger.besu.datatypes.Address;
 import org.hyperledger.besu.datatypes.BytesHolder;
 import org.hyperledger.besu.datatypes.TransactionType;
 import org.hyperledger.besu.datatypes.Wei;
@@ -93,15 +94,22 @@ public class TransactionBaseResult implements TransactionResult {
   private final List<CodeDelegationResult> authorizationList;
 
   public TransactionBaseResult(final Transaction transaction) {
-    this(transaction, Optional.empty());
+    this(transaction, Optional.empty(), Optional.empty());
   }
 
   public TransactionBaseResult(final Transaction transaction, final Optional<Wei> maybeBaseFee) {
+    this(transaction, maybeBaseFee, Optional.empty());
+  }
+
+  public TransactionBaseResult(
+      final Transaction transaction,
+      final Optional<Wei> maybeBaseFee,
+      final Optional<Address> senderOverride) {
     final TransactionType transactionType = transaction.getType();
     this.accessList =
         transaction.getAccessList().orElse(transactionType.supportsAccessList() ? List.of() : null);
     this.chainId = transaction.getChainId().map(Quantity::create).orElse(null);
-    this.from = transaction.getSender().toString();
+    this.from = senderOverride.orElseGet(transaction::getSender).toString();
     this.gas = Quantity.create(transaction.getGasLimit());
     this.maxPriorityFeePerGas =
         transaction.getMaxPriorityFeePerGas().map(Wei::toShortHexString).orElse(null);

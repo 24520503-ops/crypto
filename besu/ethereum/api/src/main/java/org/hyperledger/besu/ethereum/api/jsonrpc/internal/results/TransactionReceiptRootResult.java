@@ -14,7 +14,10 @@
  */
 package org.hyperledger.besu.ethereum.api.jsonrpc.internal.results;
 
+import org.hyperledger.besu.datatypes.Address;
 import org.hyperledger.besu.ethereum.api.query.TransactionReceiptWithMetadata;
+
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 
@@ -23,7 +26,13 @@ public class TransactionReceiptRootResult extends TransactionReceiptResult {
   private final String root;
 
   public TransactionReceiptRootResult(final TransactionReceiptWithMetadata receiptWithMetadata) {
-    super(receiptWithMetadata);
+    this(receiptWithMetadata, Optional.empty());
+  }
+
+  public TransactionReceiptRootResult(
+      final TransactionReceiptWithMetadata receiptWithMetadata,
+      final Optional<Address> senderOverride) {
+    super(receiptWithMetadata, senderOverride);
     root = receipt.getStateRoot().toString();
   }
 

@@ -15,6 +15,7 @@
 package org.hyperledger.besu.ethereum.api.jsonrpc.internal.methods;
 
 import org.hyperledger.besu.datatypes.Hash;
+import org.hyperledger.besu.datatypes.Address;
 import org.hyperledger.besu.ethereum.api.jsonrpc.RpcMethod;
 import org.hyperledger.besu.ethereum.api.jsonrpc.internal.JsonRpcRequestContext;
 import org.hyperledger.besu.ethereum.api.jsonrpc.internal.exception.InvalidJsonRpcParameters;
@@ -67,13 +68,14 @@ public class EthGetTransactionByHash implements JsonRpcMethod {
   }
 
   private Object getResult(final Hash hash) {
+    final Optional<Address> pqcSender = PqcTransactionRegistry.lookupSender(hash);
     final Optional<TransactionBaseResult> transactionResult =
-        transactionPool.getTransactionByHash(hash).map(TransactionBaseResult::new);
+        transactionPool.getTransactionByHash(hash).map(tx -> new TransactionBaseResult(tx, Optional.empty(), pqcSender));
     return transactionResult.orElseGet(
         () ->
             blockchain
                 .transactionByHash(hash)
-                .map(TransactionWithMetadataResult::new)
+                .map(tx -> new TransactionWithMetadataResult(tx, pqcSender))
                 .orElse(null));
   }
 }

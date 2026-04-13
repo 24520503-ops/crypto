@@ -1,0 +1,11 @@
+[2m2026-04-12 16:31:23.635+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mGenerateBlockchainConfig[m[2m | [m[32mGenerating 1 nodes keys.
+[m[2m2026-04-12 16:31:23.643+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mGenerateBlockchainConfig[m[2m | [m[32mGenerating keypair for node 0.
+[m[2m2026-04-12 16:31:24.082+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mGenerateBlockchainConfig[m[2m | [m[32mGenerating QBFT extra data.
+[m[2m2026-04-12 16:31:24.084+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mGenerateBlockchainConfig[m[2m | [m[32mWriting genesis file.
+[m[2m2026-04-12 16:31:25.187+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mStarting Besu
+[m[2m2026-04-12 16:31:25.393+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33m--sync-min-peers is ignored in FULL sync-mode
+[m[2m2026-04-12 16:31:25.408+0700[m[2m | [m[2mmain[m[2m | [m[1;31mERROR[m[2m | [m[2mBesu[m[2m | [m[1;31mFailed to start Besu: Port(s) '[30303, 8545]' already in use. Check for other processes using the port(s).
+[mPort(s) '[30303, 8545]' already in use. Check for other processes using the port(s).
+
+To display full help:
+besu [COMMAND] --help

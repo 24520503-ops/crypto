@@ -1,0 +1,97 @@
+[2m2026-04-13 09:14:46.924+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mStarting Besu
+[m[2m2026-04-13 09:14:47.770+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mRPC HTTP JSON-RPC config: JsonRpcConfiguration{enabled=true, port=8545, host=0.0.0.0, corsAllowedDomains=[], hostsAllowlist=[*], rpcApis=[ETH, NET, WEB3], authenticationEnabled=false, authenticationCredentialsFile=null, authenticationPublicKeyFile=null, tlsConfiguration=Optional.empty, httpTimeoutSec=30, maxActiveConnections=80, maxBatchSize=1024}
+[m[2m2026-04-13 09:14:47.772+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mForcing --bonsai-limit-trie-logs-enabled=false, since it cannot be enabled with --sync-mode=FULL and --data-storage-format=BONSAI.
+[m[2m2026-04-13 09:14:47.773+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mConnecting to 0 static nodes.
+[m[2m2026-04-13 09:14:47.787+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mForcing price bump for transaction replacement to 0, since min-gas-price is set to 0
+[m[2m2026-04-13 09:14:47.788+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mForcing tx-pool-min-gas-price=0, since it cannot be greater than the value of min-gas-price
+[m[2m2026-04-13 09:14:47.799+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mjemalloc library not found, memory usage may be reduced by installing it
+[m[2m2026-04-13 09:14:47.878+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32m
+####################################################################################################
+#                                                                                                  #
+# Besu version 00.0-develop-xxxxxxxx                                                               #
+#                                                                                                  #
+# Configuration:                                                                                   #
+# Network: Custom genesis file                                                                     #
+# /crypto/DOAN/.besu-pqc-poa/genesis.json                                                          #
+# Network Id: 1337                                                                                 #
+# Data storage: Bonsai                                                                             #
+# Sync mode: Full                                                                                  #
+# Sync min peers: 5                                                                                #
+# RPC HTTP APIs: ETH,NET,WEB3                                                                      #
+# RPC HTTP port: 8545                                                                              #
+# Using LAYERED transaction pool implementation                                                    #
+# Using STACKED worldstate update mode                                                             #
+# Opcode optimizations enabled                                                                     #
+# Parallel transaction processing enabled                                                          #
+# BAL pruning enabled (retained BALs: 113056)                                                      #
+# Target Gas Limit: 60M                                                                            #
+#                                                                                                  #
+# Host:                                                                                            #
+# Java: openjdk-java-21                                                                            #
+# Maximum heap size: 3.84 GB                                                                       #
+# OS: linux-x86_64                                                                                 #
+# glibc: 2.39                                                                                      #
+# Total memory: 15.34 GB                                                                           #
+# CPU cores: 16                                                                                    #
+#                                                                                                  #
+# Plugin Registration Summary:                                                                     #
+# No plugins have been registered.                                                                 #
+# TOTAL = 0 of 0 plugins successfully registered.                                                  #
+#                                                                                                  #
+####################################################################################################
+[m[2m2026-04-13 09:14:47.879+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mSecurity Module: localfile
+[m[2m2026-04-13 09:14:47.879+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mVersionMetadata[m[2m | [m[32mLookup version metadata file in data directory: /crypto/DOAN/besu-pqc-poa-data-demo
+[m[2m2026-04-13 09:14:47.880+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mVersionMetadata[m[2m | [m[32mNo version data detected. Writing Besu version 00.0-develop-xxxxxxxx to metadata file
+[m[2m2026-04-13 09:14:47.917+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of alt bn128
+[m[2m2026-04-13 09:14:47.918+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the Java implementation of modexp
+[m[2m2026-04-13 09:14:47.927+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of the signature algorithm
+[m[2m2026-04-13 09:14:47.928+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native implementation of the blake2bf algorithm
+[m[2m2026-04-13 09:14:48.013+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesu[m[2m | [m[32mUsing the native BoringSSL implementation of p256verify
+[m[2m2026-04-13 09:14:48.067+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mForcing price bump for transaction replacement to 0, since min-gas-price is set to 0
+[m[2m2026-04-13 09:14:48.068+0700[m[2m | [m[2mmain[m[2m | [m[33mWARN [m[2m | [m[2mBesu[m[2m | [m[33mForcing tx-pool-min-gas-price=0, since it cannot be greater than the value of min-gas-price
+[m[2m2026-04-13 09:14:48.085+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mKeyPairUtil[m[2m | [m[32mGenerated new secp256k1 public key 0xda8a831a022774d2cc21e9569d6228b5342080b3f5a48b647e60a709c2df1b7a98f29bd1e41f34cf103eebf49ac513f5bb87fc7606eceb5feb04cbb3e3f02bbd and stored it to /crypto/DOAN/.besu-pqc-poa/keys/0/key.priv
+[m[2m2026-04-13 09:14:48.178+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mProtocolScheduleBuilder[m[2m | [m[32mProtocol schedule created with milestones: [London:0]
+[m[2m2026-04-13 09:14:48.181+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRocksDBKeyValueStorageFactory[m[2m | [m[32mNo existing database at /crypto/DOAN/besu-pqc-poa-data-demo. Using default metadata for new db versionedStorageFormat=BaseVersionedStorageFormat{format=BONSAI, version=3}
+[m[2m2026-04-13 09:14:48.537+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mFlat db mode found FULL
+[m[2m2026-04-13 09:14:48.539+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mDB mode with code stored using code hash enabled = true
+[m[2m2026-04-13 09:14:48.547+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mFlat db mode found FULL
+[m[2m2026-04-13 09:14:48.548+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFlatDbStrategyProvider[m[2m | [m[32mDB mode with code stored using code hash enabled = true
+[m[2m2026-04-13 09:14:48.630+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mAdding ChainDataPruner to observe block added events
+[m[2m2026-04-13 09:14:48.631+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mBAL pruning enabled | BALs retained: 113056 | Frequency: 256
+[m[2m2026-04-13 09:14:48.651+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTransactionPoolFactory[m[2m | [m[32mEnabling transaction pool
+[m[2m2026-04-13 09:14:48.666+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBesuControllerBuilder[m[2m | [m[32mQBFT is configured, creating initial sync for BFT
+[m[2m2026-04-13 09:14:48.667+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBFTPivotSelectorFromPeers[m[2m | [m[32mCreating pivot block selector for BFT node
+[m[2m2026-04-13 09:14:48.696+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunnerBuilder[m[2m | [m[32mResolved 0 bootnodes.
+[m[2m2026-04-13 09:14:48.703+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunnerBuilder[m[2m | [m[32mDetecting NAT service.
+[m[2m2026-04-13 09:14:48.781+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mStarting external services ... 
+[m[2m2026-04-13 09:14:48.781+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mJsonRpcHttpService[m[2m | [m[32mStarting JSON-RPC service on 0.0.0.0:8545
+[m[2m2026-04-13 09:14:48.872+0700[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mJsonRpcHttpService[m[2m | [m[32mJSON-RPC service started and listening on 0.0.0.0:8545
+[m[2m2026-04-13 09:14:48.874+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mAutoTransactionLogBloomCachingService[m[2m | [m[32mStarting auto transaction log bloom caching service.
+[m[2m2026-04-13 09:14:48.875+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mLogBloomCacheMetadata[m[2m | [m[32mLookup cache metadata file in data directory: /crypto/DOAN/besu-pqc-poa-data-demo/caches
+[m[2m2026-04-13 09:14:48.888+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mStarting Ethereum main loop ... 
+[m[2m2026-04-13 09:14:48.888+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNatService[m[2m | [m[32mNo NAT environment detected so no service could be started
+[m[2m2026-04-13 09:14:48.888+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mStarting Network.
+[m[2m2026-04-13 09:14:48.897+0700[m[2m | [m[2mnioEventLoopGroup-2-1[m[2m | [m[32mINFO [m[2m | [m[2mRlpxAgent[m[2m | [m[32mP2P RLPx agent started and listening on /[0:0:0:0:0:0:0:0]:30303.
+[m[2m2026-04-13 09:14:48.897+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV4[m[2m | [m[32mStarting peer discovery agent on host=0.0.0.0, port=30303. IPv6 available.
+[m[2m2026-04-13 09:14:48.915+0700[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mVertxPeerDiscoveryAgent[m[2m | [m[32mStarted peer discovery agent successfully, on effective host=0:0:0:0:0:0:0:0 and port=30303
+[m[2m2026-04-13 09:14:48.939+0700[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mNodeRecordManager[m[2m | [m[32mWriting node record to disk. NodeRecord{seq=1, publicKey=0x03da8a831a022774d2cc21e9569d6228b5342080b3f5a48b647e60a709c2df1b7a, udpAddress=Optional[/127.0.0.1:30303], tcpAddress=Optional[/127.0.0.1:30303], quicAddress=Optional.empty, udp6Address=Optional.empty, tcp6Address=Optional.empty, quic6Address=Optional.empty, asBase64=-Je4QDOB-4V7fmnEnmnmm8I3YBDUMUU0SOlAaLuuYK14oBOfGQPS2XtTAK7GNpjnjQmV4aaXy5Z2Ynpd1562-ijOqNwBg2V0aMfGhJOXxZKAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQPaioMaAid00swh6VadYii1NCCAs_Wki2R-YKcJwt8beoN0Y3CCdl-DdWRwgnZf, nodeId=0x312136dfc1aa19e8c6e95d949d5444573a41bcafd67f5fa0baca3219e78e9ac6, customFields={tcp=30303, udp=30303, eth=[[0x9397c592, 0x]], id=V4, ip=0x7f000001, secp256k1=0x03da8a831a022774d2cc21e9569d6228b5342080b3f5a48b647e60a709c2df1b7a}}
+[m[2m2026-04-13 09:14:48.945+0700[m[2m | [m[2mvert.x-eventloop-thread-1[m[2m | [m[32mINFO [m[2m | [m[2mPeerDiscoveryAgentV4[m[2m | [m[32mP2P peer discovery agent started and listening on /[0:0:0:0:0:0:0:0]:30303
+[m[2m2026-04-13 09:14:48.946+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mEnode URL enode://da8a831a022774d2cc21e9569d6228b5342080b3f5a48b647e60a709c2df1b7a98f29bd1e41f34cf103eebf49ac513f5bb87fc7606eceb5feb04cbb3e3f02bbd@127.0.0.1:30303
+[m[2m2026-04-13 09:14:48.947+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mENR URL enr:-Je4QDOB-4V7fmnEnmnmm8I3YBDUMUU0SOlAaLuuYK14oBOfGQPS2XtTAK7GNpjnjQmV4aaXy5Z2Ynpd1562-ijOqNwBg2V0aMfGhJOXxZKAgmlkgnY0gmlwhH8AAAGJc2VjcDI1NmsxoQPaioMaAid00swh6VadYii1NCCAs_Wki2R-YKcJwt8beoN0Y3CCdl-DdWRwgnZf
+[m[2m2026-04-13 09:14:48.947+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultP2PNetwork[m[2m | [m[32mNode address 0x9d5444573a41bcafd67f5fa0baca3219e78e9ac6
+[m[2m2026-04-13 09:14:48.951+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mSupported capabilities: [eth/68, eth/69, eth/70, eth/71], [istanbul/100], [snap/1]
+[m[2m2026-04-13 09:14:48.951+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mDefaultSynchronizer[m[2m | [m[32mStarting synchronizer.
+[m[2m2026-04-13 09:14:48.952+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mTransactionPoolFactory[m[2m | [m[32mEnabling transaction handling following initial sync
+[m[2m2026-04-13 09:14:48.955+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mBftMiningCoordinator[m[2m | [m[32mStarting BFT mining coordinator following initial sync
+[m[2m2026-04-13 09:14:48.959+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFullSyncDownloader[m[2m | [m[32mStarting full sync.
+[m[2m2026-04-13 09:14:48.960+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mFullSyncTargetManager[m[2m | [m[32mUnable to find sync target. Waiting for 5 peers minimum. Currently checking 0 peers for usefulness
+[m[2m2026-04-13 09:14:48.962+0700[m[2m | [m[2mmain[m[2m | [m[32mINFO [m[2m | [m[2mRunner[m[2m | [m[32mEthereum main loop is up.
+[m[2m2026-04-13 09:19:06.046+0700[m[2m | [m[2mBftProcessorExecutor-QBFT-0[m[2m | [m[32mINFO [m[2m | [m[2mBftProcessor[m[2m | [m[32mShutting down BFT event processor
+[m[2m2026-04-13 09:19:06.063+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mDefaultSynchronizer[m[2m | [m[32mStopping synchronizer
+[m[2m2026-04-13 09:19:06.077+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mStopping Network.
+[m[2m2026-04-13 09:19:06.104+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mEthProtocolManager[m[2m | [m[32mStopping eth Subprotocol.
+[m[2m2026-04-13 09:19:06.107+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mEthProtocolManager[m[2m | [m[32meth Subprotocol stopped.
+[m[2m2026-04-13 09:19:06.107+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mNetworkRunner[m[2m | [m[32mNetwork stopped.
+[m[2m2026-04-13 09:19:06.108+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mAutoTransactionLogBloomCachingService[m[2m | [m[32mShutting down Auto transaction logs caching service.
+[m[2m2026-04-13 09:19:06.109+0700[m[2m | [m[2mBesuCommand-Shutdown-Hook[m[2m | [m[32mINFO [m[2m | [m[2mNatService[m[2m | [m[32mNo NAT environment detected so no service could be stopped
+[m

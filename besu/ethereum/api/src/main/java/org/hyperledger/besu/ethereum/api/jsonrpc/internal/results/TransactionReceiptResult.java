@@ -25,6 +25,7 @@ import org.hyperledger.besu.ethereum.core.TransactionReceipt;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -74,13 +75,19 @@ public abstract class TransactionReceiptResult {
   private final String blobGasPrice;
 
   protected TransactionReceiptResult(final TransactionReceiptWithMetadata receiptWithMetadata) {
+    this(receiptWithMetadata, Optional.empty());
+  }
+
+  protected TransactionReceiptResult(
+      final TransactionReceiptWithMetadata receiptWithMetadata,
+      final Optional<Address> senderOverride) {
     final Transaction txn = receiptWithMetadata.getTransaction();
     this.receipt = receiptWithMetadata.getReceipt();
     this.blockHash = receiptWithMetadata.getBlockHash().toString();
     this.blockNumber = Quantity.create(receiptWithMetadata.getBlockNumber());
     this.contractAddress = txn.contractAddress().map(Address::toString).orElse(null);
     this.cumulativeGasUsed = Quantity.create(receipt.getCumulativeGasUsed());
-    this.from = txn.getSender().toString();
+    this.from = senderOverride.orElseGet(txn::getSender).toString();
     this.gasUsed = Quantity.create(receiptWithMetadata.getGasUsed());
     this.blobGasUsed = receiptWithMetadata.getBlobGasUsed().map(Quantity::create).orElse(null);
     this.blobGasPrice = receiptWithMetadata.getBlobGasPrice().map(Quantity::create).orElse(null);

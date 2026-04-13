@@ -83,6 +83,11 @@ public class EthSendPqcTransaction implements JsonRpcMethod {
 
     final ValidationResult<TransactionInvalidReason> validationResult =
         transactionPool.get().addTransactionViaApi(transaction);
+
+    if (validationResult.isValid()) {
+      PqcTransactionRegistry.recordSender(transaction.getHash(), transaction.getSender());
+    }
+
     return validationResult.either(
         () -> new JsonRpcSuccessResponse(requestContext.getRequest().getId(), transaction.getHash().toString()),
         errorReason -> getJsonRpcResponse(requestContext, errorReason, validationResult));

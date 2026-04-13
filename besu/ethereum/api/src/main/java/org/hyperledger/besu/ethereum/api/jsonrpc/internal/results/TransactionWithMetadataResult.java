@@ -14,8 +14,11 @@
  */
 package org.hyperledger.besu.ethereum.api.jsonrpc.internal.results;
 
+import org.hyperledger.besu.datatypes.Address;
 import org.hyperledger.besu.datatypes.Hash;
 import org.hyperledger.besu.ethereum.api.query.TransactionWithMetadata;
+
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,7 +34,12 @@ public class TransactionWithMetadataResult extends TransactionBaseResult {
   private final String transactionIndex;
 
   public TransactionWithMetadataResult(final TransactionWithMetadata tx) {
-    super(tx.getTransaction(), tx.getBaseFee());
+    this(tx, Optional.empty());
+  }
+
+  public TransactionWithMetadataResult(
+      final TransactionWithMetadata tx, final Optional<Address> senderOverride) {
+    super(tx.getTransaction(), tx.getBaseFee(), senderOverride);
     this.blockHash = tx.getBlockHash().map(Hash::toString).orElse(null);
     this.blockNumber = tx.getBlockNumber().map(Quantity::create).orElse(null);
     this.blockTimestamp = tx.getBlockTimestamp().map(Quantity::create).orElse(null);

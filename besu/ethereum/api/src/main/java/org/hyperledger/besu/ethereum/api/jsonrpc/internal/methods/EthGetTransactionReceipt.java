@@ -15,6 +15,7 @@
 package org.hyperledger.besu.ethereum.api.jsonrpc.internal.methods;
 
 import org.hyperledger.besu.datatypes.Hash;
+import org.hyperledger.besu.datatypes.Address;
 import org.hyperledger.besu.ethereum.api.jsonrpc.RpcMethod;
 import org.hyperledger.besu.ethereum.api.jsonrpc.internal.JsonRpcRequestContext;
 import org.hyperledger.besu.ethereum.api.jsonrpc.internal.exception.InvalidJsonRpcParameters;
@@ -29,6 +30,8 @@ import org.hyperledger.besu.ethereum.api.query.BlockchainQueries;
 import org.hyperledger.besu.ethereum.api.query.TransactionReceiptWithMetadata;
 import org.hyperledger.besu.ethereum.mainnet.ProtocolSchedule;
 import org.hyperledger.besu.ethereum.mainnet.TransactionReceiptType;
+
+import java.util.Optional;
 
 public class EthGetTransactionReceipt implements JsonRpcMethod {
 
@@ -58,19 +61,21 @@ public class EthGetTransactionReceipt implements JsonRpcMethod {
           RpcErrorType.INVALID_TRANSACTION_HASH_PARAMS,
           e);
     }
+    final Optional<Address> pqcSender = PqcTransactionRegistry.lookupSender(hash);
     final TransactionReceiptResult result =
         blockchainQueries
             .transactionReceiptByTransactionHash(hash, protocolSchedule)
-            .map(this::getResult)
+            .map(receipt -> getResult(receipt, pqcSender))
             .orElse(null);
     return new JsonRpcSuccessResponse(requestContext.getRequest().getId(), result);
   }
 
-  private TransactionReceiptResult getResult(final TransactionReceiptWithMetadata receipt) {
+  private TransactionReceiptResult getResult(
+      final TransactionReceiptWithMetadata receipt, final Optional<Address> pqcSender) {
     if (receipt.getReceipt().getTransactionReceiptType() == TransactionReceiptType.ROOT) {
-      return new TransactionReceiptRootResult(receipt);
+      return new TransactionReceiptRootResult(receipt, pqcSender);
     } else {
-      return new TransactionReceiptStatusResult(receipt);
+      return new TransactionReceiptStatusResult(receipt, pqcSender);
     }
   }
 }
